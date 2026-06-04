@@ -26,7 +26,7 @@ const Badge = ({ variant = 'default', className = '', children }) => {
     outline: 'text-neutral-200 border-neutral-700',
   };
   return (
-    <div className={`inline-flex items-center rounded-md border px-2 py-1 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 ${variants[variant]} ${className}`}>
+    <div className={`inline-flex items-center rounded-md border px-2 py-1 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 ${variants[variant]} ${className}`}>
       {children}
     </div>
   );
@@ -77,7 +77,7 @@ export default function App() {
               <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] items-start">
                 {/* Flowchart */}
                 <div>
-                  <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-100">Execution Flow</h4>
+                  <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-neutral-100">Execution Flow</h4>
 
                   <div className="flex justify-center rounded-xl border border-neutral-800 bg-[#1e1e1e] p-6 font-mono text-sm shadow-inner overflow-x-auto">
                     <div className="flex items-center gap-2 min-w-max">
@@ -127,15 +127,15 @@ export default function App() {
                     <div className="flex items-start gap-2">
                       <div className="mt-1 w-2 h-2 shrink-0 rounded-sm border border-amber-500/50 bg-amber-950/30"></div>
                       <div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-300">Fork / Join:</span>
-                        <span className="ml-1 text-xs text-neutral-400">"Fork" spawns parallel tasks. "Join" waits for them all to finish</span>
+                        <span className="text-sm font-bold uppercase tracking-wider text-neutral-300">Fork / Join:</span>
+                        <span className="ml-1 text-sm text-neutral-400">"Fork" spawns parallel tasks. "Join" waits for them all to finish</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <div className="mt-1 w-2 h-2 shrink-0 rounded-sm border border-blue-500/50 bg-blue-950/30"></div>
                       <div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-300">Spawned Threads:</span>
-                        <span className="ml-1 text-xs text-neutral-400">The separate tasks that are executing in parallel</span>
+                        <span className="text-sm font-bold uppercase tracking-wider text-neutral-300">Spawned Threads:</span>
+                        <span className="ml-1 text-sm text-neutral-400">The separate tasks that are executing in parallel</span>
                       </div>
                     </div>
                   </div>
@@ -143,12 +143,12 @@ export default function App() {
 
                 {/* MHP Table */}
                 <div>
-                  <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-100">MHP Pairs</h4>
-                  <p className="mb-6 text-sm text-neutral-300">This mapping is the output of an MHP analysis</p>
+                  <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-neutral-100">MHP Pairs</h4>
+                  <p className="mb-4 text-sm text-neutral-400 leading-relaxed">This mapping is the output of an MHP analysis</p>
                   <div className="overflow-hidden rounded-lg border border-neutral-700 shadow-md">
                     <table className="w-full text-left text-sm border-collapse">
                       <thead>
-                        <tr className="bg-[#1e1e1e] text-xs text-neutral-400 uppercase tracking-wider font-bold border-b border-neutral-700">
+                        <tr className="bg-[#1e1e1e] text-sm text-neutral-400 uppercase tracking-wider font-bold border-b border-neutral-700">
                           <th className="px-4 py-3 border-r border-neutral-700">Statement</th>
                           <th className="px-4 py-3">Parallel running Statements</th>
                         </tr>
@@ -190,7 +190,7 @@ export default function App() {
                 {/* Data Race - Targeted Graphic */}
                 <div>
                   <h4 className="mb-3 text-sm font-bold text-white">Data Races</h4>
-                  <p className="mb-6 text-sm text-neutral-300">When two threads try write to the same memory location at the same time</p>
+                  <p className="mb-4 text-sm text-neutral-400 leading-relaxed">When two threads try write to the same memory location at the same time</p>
                   <div className="flex flex-col items-center justify-center rounded-xl border border-neutral-800 bg-[#1e1e1e] p-6 shadow-sm">
 
                     <div className="relative w-full h-[140px] max-w-[340px] flex justify-center">
@@ -220,18 +220,18 @@ export default function App() {
                       </svg>
 
                       {/* HTML Nodes */}
-                      <div className="absolute top-[55px] left-[20px] bg-[#e0f2fe] text-[#1e3a8a] font-mono text-[11px] px-3 py-1.5 rounded-md shadow-sm font-bold tracking-wider z-20">t₁ write</div>
+                      <div className="absolute top-[55px] left-[20px] bg-[#e0f2fe] text-[#1e3a8a] font-mono text-sm px-3 py-1.5 rounded-md shadow-sm font-bold tracking-wider z-20">t₁ write</div>
 
-                      <div className="absolute top-[50px] left-[135px] bg-[#ffedd5] text-[#9a3412] font-mono text-[10px] leading-tight px-3 py-2 rounded-md shadow-md font-bold text-center z-20 border border-orange-300">shared<br />mem M</div>
+                      <div className="absolute top-[50px] left-[135px] bg-[#ffedd5] text-[#9a3412] font-mono text-sm leading-tight px-3 py-2 rounded-md shadow-md font-bold text-center z-20 border border-orange-300">shared<br />mem M</div>
 
-                      <div className="absolute top-[55px] right-[20px] bg-[#e0f2fe] text-[#1e3a8a] font-mono text-[11px] px-3 py-1.5 rounded-md shadow-sm font-bold tracking-wider z-20">t₂ write</div>
+                      <div className="absolute top-[55px] right-[20px] bg-[#e0f2fe] text-[#1e3a8a] font-mono text-sm px-3 py-1.5 rounded-md shadow-sm font-bold tracking-wider z-20">t₂ write</div>
                     </div>
 
                     <div className="mt-2 text-center">
-                      <div className="text-red-500 text-xs font-bold">
+                      <div className="text-red-500 text-sm font-bold">
                         ✗ race condition — don't know which value was written last
                       </div>
-                      <div className="mt-1 text-white text-[11px] font-medium">
+                      <div className="mt-1 text-white text-sm font-medium">
                         This unpredictability can cause bugs. MHP analysis can unearth such accesses
                       </div>
                     </div>
@@ -272,7 +272,7 @@ export default function App() {
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
 
-                <p className="mb-4 text-[13px] text-neutral-400 leading-relaxed">
+                <p className="mb-4 text-sm text-neutral-400 leading-relaxed">
                   In the worst case, time to compute standard MHP analysis grows <strong className="text-white font-bold">cubically</strong> in relation to input program size
                 </p>
 
@@ -283,15 +283,15 @@ export default function App() {
                   <div className="flex flex-row lg:flex-col gap-3 lg:w-[35%] shrink-0">
                     <div className="bg-[#333333] rounded-lg p-3 flex flex-col justify-center items-center text-center shadow-inner flex-1">
                       <span className="text-xl md:text-2xl lg:text-xl font-bold text-white mb-1">O(n³)</span>
-                      <span className="text-[9px] md:text-[10px] text-neutral-400 uppercase tracking-wider font-bold">Standard<br />MHP</span>
+                      <span className="text-sm text-neutral-400 uppercase tracking-wider font-bold">Standard<br />MHP</span>
                     </div>
                     <div className="bg-[#333333] rounded-lg p-3 flex flex-col justify-center items-center text-center shadow-inner flex-1">
                       <span className="text-xl md:text-2xl lg:text-xl font-bold text-orange-400 mb-1">↑ 10x</span>
-                      <span className="text-[9px] md:text-[10px] text-neutral-400 uppercase tracking-wider font-bold">Graph nodes</span>
+                      <span className="text-sm text-neutral-400 uppercase tracking-wider font-bold">Graph nodes</span>
                     </div>
                     <div className="bg-[#333333] rounded-lg p-3 flex flex-col justify-center items-center text-center shadow-inner flex-1">
                       <span className="text-xl md:text-2xl lg:text-xl font-bold text-orange-400 mb-1">↑ 1000x</span>
-                      <span className="text-[9px] md:text-[10px] text-neutral-400 uppercase tracking-wider font-bold">Runtime</span>
+                      <span className="text-sm text-neutral-400 uppercase tracking-wider font-bold">Runtime</span>
                     </div>
                   </div>
 
@@ -317,11 +317,11 @@ export default function App() {
                     </svg>
 
                     {/* Axis Labels */}
-                    <div className="z-10 flex h-full flex-col justify-between text-[10px] font-bold text-neutral-500 uppercase tracking-wider absolute left-3 top-0 py-6">
+                    <div className="z-10 flex h-full flex-col justify-between text-sm font-bold text-neutral-500 uppercase tracking-wider absolute left-3 top-0 py-6">
                       <span className="-rotate-90 origin-left mt-24 whitespace-nowrap">Cost</span>
                     </div>
 
-                    <div className="z-10 w-full mt-auto flex justify-between items-end text-[10px] text-neutral-500 font-bold px-4">
+                    <div className="z-10 w-full mt-auto flex justify-between items-end text-sm text-neutral-500 font-bold px-4">
                       <span>0</span>
                       <span className="uppercase tracking-wider">Program Size</span>
                       <span>n</span>
@@ -344,7 +344,7 @@ export default function App() {
                 {/* Analysis Precision */}
                 <div>
                   <h4 className="mb-1.5 text-sm font-bold text-white">Analysis Precision</h4>
-                  <p className="mb-3 text-[13px] text-neutral-400 leading-relaxed">
+                  <p className="mb-3 text-sm text-neutral-400 leading-relaxed">
                     GRIP-MHP handles several parallelism-related constructs in a more precise manner
                   </p>
 
@@ -352,7 +352,7 @@ export default function App() {
                   <div className="overflow-hidden rounded-lg border border-neutral-700 shadow-md">
                     <table className="w-full text-left text-sm border-collapse">
                       <thead>
-                        <tr className="bg-[#1e1e1e] text-[10px] font-bold text-neutral-400 uppercase tracking-wider border-b border-neutral-700">
+                        <tr className="bg-[#1e1e1e] text-sm font-bold text-neutral-400 uppercase tracking-wider border-b border-neutral-700">
                           <th className="px-4 py-2.5 border-r border-neutral-700">Target</th>
                           <th className="px-4 py-2.5 border-r border-neutral-700">Reported MHP Set</th>
                           <th className="px-4 py-2.5 text-right">Result Quality</th>
@@ -377,7 +377,7 @@ export default function App() {
                 {/* Graph Compression */}
                 <div>
                   <h4 className="mb-1.5 text-sm font-bold text-white">Graph Compression</h4>
-                  <p className="mb-3 text-[13px] text-neutral-400 leading-relaxed">
+                  <p className="mb-3 text-sm text-neutral-400 leading-relaxed">
                     GRIP-MHP is more efficient at removing unnecessary statements from program graphs. 
                     This compresses the program graph and therefore greatly reduces the time needed to complete the analysis.
                   </p>
@@ -385,7 +385,7 @@ export default function App() {
                   <div className="flex flex-col gap-4 rounded-lg border border-neutral-800 bg-[#1e1e1e] p-4">
                     {/* Chart 1: Graph Size */}
                     <div>
-                      <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-neutral-300">
+                      <div className="mb-1.5 flex items-center justify-between text-sm font-bold text-neutral-300">
                         <span>Program Graph Size (Nodes)</span>
                       </div>
 
@@ -408,7 +408,7 @@ export default function App() {
 
                     {/* Chart 2: Runtime */}
                     <div>
-                      <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-neutral-300">
+                      <div className="mb-1.5 flex items-center justify-between text-sm font-bold text-neutral-300">
                         <span>Analysis Runtime</span>
                       </div>
 
