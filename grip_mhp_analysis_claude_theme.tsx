@@ -143,7 +143,7 @@ export default function App() {
 
                 {/* MHP Table */}
                 <div>
-                  <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-neutral-100">MHP Pairs</h4>
+                  <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-neutral-100">MHP Result</h4>
                   <p className="mb-4 text-sm text-neutral-400 leading-relaxed">This mapping is the output of an MHP analysis</p>
                   <div className="overflow-hidden rounded-lg border border-neutral-700 shadow-md">
                     <table className="w-full text-left text-sm border-collapse">
@@ -190,7 +190,7 @@ export default function App() {
                 {/* Data Race - Targeted Graphic */}
                 <div>
                   <h4 className="mb-3 text-sm font-bold text-white">Data Races</h4>
-                  <p className="mb-4 text-sm text-neutral-400 leading-relaxed">When two threads try write to the same memory location at the same time</p>
+                  <p className="mb-4 text-sm text-neutral-400 leading-relaxed">When two statements which run in parallel, try to write to the same memory location at the same time</p>
                   <div className="flex flex-col items-center justify-center rounded-xl border border-neutral-800 bg-[#1e1e1e] p-6 shadow-sm">
 
                     <div className="relative w-full h-[140px] max-w-[340px] flex justify-center">
